@@ -52,7 +52,7 @@ vim .bashrc
 You will enter the Vim editor. Type i and you will go into **insert** mode. Now after the first line type the following:
 
 ```
-export GUROBI_HOME="/opt/gurobi901/linux64"
+export GUROBI_HOME="/opt/gurobi952/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 ```
@@ -66,16 +66,16 @@ Press **esc** key and then exit the editor by typing **:wq:** enter.
 You need to run a script **setup.py** available with the gurobi installation files. For it follow the commands:
 ```
 cd /home/netid/opt/gurobi952/linux64
-python setup.py
+python setup.py install
 ```
 
 ### Installng Gurobi (Using conda) (Recomended)
   
 ```bash
 module load miniconda3
-conda env create "new_env" python=3.10.8
+conda env create -n "new_env" python=3.10.8
 conda activate "new_env"
-conda install -c gurobi=9.5.2 gurobi
+conda install -c gurobi gurobi=9.5.2
 ```
   
  ## Installing Pyomo
