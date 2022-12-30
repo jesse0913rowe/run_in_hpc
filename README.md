@@ -52,12 +52,12 @@ vim .bashrc
 You will enter the Vim editor. Type i and you will go into **insert** mode. Now after the first line type the following:
 
 ```
-export GUROBI_HOME="/opt/gurobi901/linux64"
+export GUROBI_HOME="/opt/gurobi952/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 ```
   
-Press **esc** key and then exit the editor by typing **:wq:** enter.
+Press **esc** key and then exit the editor by typing **:x:** enter.
 
 
 > **Note** More information abailable at: https://www.gurobi.com/documentation/9.0/quickstart_linux/software_installation_guid.html
@@ -66,16 +66,16 @@ Press **esc** key and then exit the editor by typing **:wq:** enter.
 You need to run a script **setup.py** available with the gurobi installation files. For it follow the commands:
 ```
 cd /home/netid/opt/gurobi952/linux64
-python setup.py
+python setup.py install --user
 ```
 
 ### Installng Gurobi (Using conda) (Recomended)
   
 ```bash
 module load miniconda3
-conda env create "new_env" python=3.10.8
+conda create -n "new_env" python=3.10.8
 conda activate "new_env"
-conda install -c gurobi=9.5.2 gurobi
+conda install -c gurobi gurobi=9.5.2
 ```
   
  ## Installing Pyomo
@@ -104,7 +104,7 @@ Create a test.py script in your HOME directory using:
 vim test.py
 ```
 Now type the code available in [opt_test.py](opt_test.py)
-Save and quit Vim editor by typing- ":wq", hit enter. Run the file using:
+Save and quit Vim editor by typing- ":x", hit enter. Run the file using:
 ```
 module load miniconda3
 conda activate "new_env"
